@@ -22,7 +22,7 @@ class WNBModule(pl.LightningModule):
     def __init__(self, num_classes: int = NUM_CLASSES_ASL, learning_rate: float = 1e-3):
         super().__init__()
         self.save_hyperparameters()
-        self.model = models.resnet18(pretrained=False)
+        self.model = models.resnet101(pretrained=False)
         num_ftrs = self.model.fc.in_features
         self.model.fc = nn.Linear(num_ftrs, num_classes)
         self.criterion = nn.CrossEntropyLoss()
@@ -54,7 +54,7 @@ class WNBModule(pl.LightningModule):
         pass
 
 # --- Model Path ---
-MODEL_STATE_DICT_PATH = "asl_resnet_model.pt"
+MODEL_STATE_DICT_PATH = "asl_resnet101_best_model.pt"
 
 # --- Load Model ---
 @st.cache_resource
