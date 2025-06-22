@@ -54,7 +54,7 @@ class WNBModule(pl.LightningModule):
         pass
 
 # --- Model Path ---
-MODEL_STATE_DICT_PATH = "CGG19.pt"
+MODEL_STATE_DICT_PATH = "VGG19.pt"
 
 # --- Load Model ---
 @st.cache_resource
